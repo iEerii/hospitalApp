@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const dbConnection = async() => {
     
     try {
-        await mongoose.connect('mongodb+srv://main_user:miaXgWaAyk1rSaRl@cluster0.os7pwdc.mongodb.net/hospitalDB');
+        await mongoose.connect(process.env.DB_CNN);
         
         console.log('BD Online')
 

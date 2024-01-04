@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const {dbConnection} = require('./DB/config');
 
 //crear el servidor de express
@@ -16,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 //ejecutar el servidor
-app.listen( 3010, () => {
-    console.log('Se esta ejecutando el servidor en el puerto ' + 3010)
+app.listen( process.env.PORT, () => {
+    console.log('Se esta ejecutando el servidor en el puerto ' + process.env.PORT)
 })
 
