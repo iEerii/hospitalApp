@@ -1,7 +1,11 @@
 const express = require('express');
+const {dbConnection} = require('./DB/config');
 
 //crear el servidor de express
 const app = express();
+
+//llamando bd
+dbConnection();
 
 //rutas
 app.get('/', (req, res) => {
@@ -12,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 //ejecutar el servidor
-app.listen( 3001, () => {
-    console.log('Se esta ejecutando el servidor en el puert' + 3001)
+app.listen( 3010, () => {
+    console.log('Se esta ejecutando el servidor en el puerto ' + 3010)
 })
 
