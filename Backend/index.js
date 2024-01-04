@@ -13,12 +13,7 @@ app.use(cors());
 dbConnection();
 
 //rutas
-app.get('/', (req, res) => {
-    res.json({
-        ok: 'true',
-        msg: 'Hola Mundo'
-    })
-});
+app.use('/api/usuarios', require('./routes/usuarios'));
 
 //ejecutar el servidor
 app.listen( process.env.PORT, () => {
