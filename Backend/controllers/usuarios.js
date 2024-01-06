@@ -11,21 +11,23 @@ const getUsuarios = async(req, res) => {
     })
 }
 
-const crearUsuario = async(req, res) => {
+const crearUsuario = async(req, res = response) => {
 
-    const {email, password, nombre} = req.body;
+    const { email, password, nombre } = req.body;
 
     try {
+
         const existeEmail = await Usuario.findOne({email});
 
-        if (existeEmail){
-            return res.status(400).json({
-                ok: false,
-                msg: 'El correo ya está registrado'
-            })
-        }
+        // if (existeEmail){
+        //     return res.status(400).json({
+        //         ok: false,
+        //         msg: 'El correo ya está registrado'
+        //     })
+        // }
 
         const usuario = new Usuario(req.body);
+
         await usuario.save();
     
         res.json({
