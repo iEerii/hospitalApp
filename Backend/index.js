@@ -17,6 +17,7 @@ dbConnection();
 
 //rutas
 app.use('/api/usuarios', require('./routes/usuarios'));
+app.use('/api/login', require('./routes/auth'));
 
 //ejecutar el servidor
 app.listen( process.env.PORT, () => {
