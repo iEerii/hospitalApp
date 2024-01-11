@@ -6,41 +6,19 @@ const MedicoSchema = Schema ({
         type: String,
         require: true
     },
-    // email:{
-    //     type: String,
-    //     require: true,
-    //     unique: true
-    // },
-    // password:{
-    //     type: String,
-    //     require: true
-    // },
     img:{
         type: String,
     },
     usuario:{
         type: Schema.Types.ObjectId,
-        ref: 'Usuario'
+        ref: 'Usuario',
+        require: true
     },
     hospital:{
         type: Schema.Types.ObjectId,
-        ref: 'Hospital'
+        ref: 'Hospital',
+        require: true
     },
-    // role:{
-    //     type: String,
-    //     require: true,
-    //     default: 'USER_ROLE'     
-    // },
-    // google:{
-    //     type: Boolean,
-    //     default: false
-    // },
 });
 
-// UsuarioSchema.method('toJSON', function() {
-//     const {__v, _id, password, ...object} = this.toObject();
-//     object.uid = id;
-//     return Object;
-// })
-
-module.exports = model('Usuario', MedicoSchema);
+module.exports = model('Medico', MedicoSchema);
