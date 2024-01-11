@@ -16,7 +16,7 @@ router.get('/', getMedicos);
 
 router.post('/', 
     [
-       
+        
     ],
     crearMedico
 );

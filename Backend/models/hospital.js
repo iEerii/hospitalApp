@@ -10,6 +10,7 @@ const HospitalSchema = Schema ({
         type: String,
     },
     usuario: {
+        require: true,
         type: Schema.Types.ObjectId,
         ref: 'Usuario'
     }
@@ -21,4 +22,4 @@ const HospitalSchema = Schema ({
 //     return Object;
 // })
 
-module.exports = model('Usuario', HospitalSchema);
+module.exports = model('Hospital', HospitalSchema);
