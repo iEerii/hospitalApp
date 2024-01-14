@@ -2,7 +2,6 @@ const {response} = require('express');
 const bcrypt = require('bcryptjs');
 
 const Usuario = require('../models/usuario');
-const usuario = require('../models/usuario');
 const { generarJWT } = require('../helpers/jwt');
 
 const getUsuarios = async(req, res) => {
