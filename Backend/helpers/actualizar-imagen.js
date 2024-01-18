@@ -49,8 +49,8 @@ const actualizarImagen = async(tipo, id, nombreArchivo) => {
 
         case 'usuarios':
             const usuario = await Usuario.findById(id);
-            if ( !usuario ){
-                console.log('no es un usuario por id')
+            if ( !usuario ) {
+                console.log('No es un usuario por id');
                 return false;
             }
 
@@ -61,14 +61,7 @@ const actualizarImagen = async(tipo, id, nombreArchivo) => {
             await usuario.save();
             return true;
         break;
-
-        default:
-        break  
     }
-   
-
-
-
 }
 
 module.exports = {
