@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Google Sign in</title>
+    </head>
+    <body>
+        <h1>Googleo</h1>
+
+        <div id="buttonDiv"></div>
+
+        <script src="https://accounts.google.com/gsi/client" async></script>
+        <script>
+            function handleCredentialResponse(response) {
+                console.log("Encoded JWT ID token: " + response.credential);
+            }
+            window.onload = function () {
+                google.accounts.id.initialize({
+                client_id: "300962111159-rv88uop7h4rpnb48c3ju2ehshnnmi4gc.apps.googleusercontent.com",
+                callback: handleCredentialResponse
+                });
+                google.accounts.id.renderButton(
+                document.getElementById("buttonDiv"),
+                { theme: "outline", size: "large" }  // customization attributes
+                );
+                google.accounts.id.prompt(); // also display the One Tap dialog
+          }
+        </script>
+        
+    </body>
+</html>
